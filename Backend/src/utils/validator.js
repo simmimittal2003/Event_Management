@@ -16,8 +16,18 @@ const isValidDate = (value) => {
   return !isNaN(Date.parse(value));
 };
 
+const isValidEmail = (input) =>
+  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input);
+
+const isValidPassword = (input) =>
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,20}$/.test(
+    input
+  );
+
 module.exports = {
   isValid,
   isValidPositiveNumber,
   isValidDate,
+  isValidEmail,
+  isValidPassword,
 };
